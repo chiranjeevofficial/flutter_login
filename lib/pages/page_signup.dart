@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_app/main.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -10,35 +11,11 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
-
-  TextEditingController passwordFeild1 = TextEditingController();
-  TextEditingController passwordFeild2 = TextEditingController();
+  late String newPassword, repeatPassword;
 
   checkPassword() {
     if (_formKey.currentState!.validate()) {
-      
-      String newPassword = passwordFeild1.text;
-      String confirmPassword = passwordFeild2.text;
-  
-      if (newPassword == confirmPassword) {
-        showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: const Text('Password Match'),
-              content: const Text('The entered passwords match.'),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('OK'),
-                ),
-              ],
-            );
-          }
-        );
-      }
+      Navigator.pushNamed(context, MyRoute.dashboardRoute);
     }
   }
 
@@ -50,6 +27,19 @@ class _SignupPageState extends State<SignupPage> {
     ));
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        title: const Center(
+          child: Text(
+            "Sign Up",
+            style: TextStyle(color: Colors.white)
+          )
+        ),
+        leadingWidth: 60,
+        actions: [
+          Container(width: 60)
+        ],
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -60,7 +50,7 @@ class _SignupPageState extends State<SignupPage> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Form(
-                  key : _formKey,
+                  key: _formKey,
                   child: Column(children: [
                     TextFormField(
                       decoration: const InputDecoration(
@@ -87,6 +77,11 @@ class _SignupPageState extends State<SignupPage> {
                       },
                     ),
                     TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          newPassword = value;
+                        });
+                      },
                       decoration: const InputDecoration(
                         labelText: "New Password",
                         hintText: "Enter password",
@@ -107,11 +102,18 @@ class _SignupPageState extends State<SignupPage> {
                           return "Password cannot be empty";
                         } else if (value.length < 6) {
                           return "Password length should be atleast 6";
+                        } else if (newPassword != repeatPassword) {
+                          return "Password doesn't Matched";
                         }
                         return null;
                       },
                     ),
                     TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          repeatPassword = value;
+                        });
+                      },
                       decoration: const InputDecoration(
                         labelText: "Confirm Password",
                         hintText: "Repeat password",
@@ -132,6 +134,8 @@ class _SignupPageState extends State<SignupPage> {
                           return "Password cannot be empty";
                         } else if (value.length < 6) {
                           return "Password length should be atleast 6";
+                        } else if (newPassword != repeatPassword) {
+                          return "Password doesn't Matched";
                         }
                         return null;
                       },

@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^1.1.2
   google_fonts: ^6.1.0
+  permission_handler: ^11.1.0
+  contacts_service: ^0.6.3
 
 dev_dependencies:
   flutter_test:

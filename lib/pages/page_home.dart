@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
 
   moveToLogin(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, MyRoute.loginRoute);
+      Navigator.pushNamed(context, MyRoute.dashboardRoute);
     }
   }
 
@@ -24,8 +24,11 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           backgroundColor: Colors.blue[900],
           title: const Center(
-              child: Text("Namaste! Coder",
-                  style: TextStyle(color: Colors.white))),
+            child: Text("Namaste! Coder",
+              style: TextStyle(color: Colors.white)
+            )
+          ),
+          automaticallyImplyLeading: false,
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -34,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(children: [
                 const SizedBox(height: 20),
                 Text(
-                  "Account Authentication",
+                  "Welcome in Developer Mall",
                   style: GoogleFonts.poppins(fontSize: 20),
                 ),
                 Image.asset("assets/images/account.png"),
@@ -111,9 +114,13 @@ class _HomePageState extends State<HomePage> {
                                   width: 130,
                                   height: 50,
                                   alignment: Alignment.center,
-                                  child: const Text("Sign Up",
-                                      style: TextStyle(
-                                          color: Colors.indigo, fontSize: 20)),
+                                  child: const Text(
+                                    "Sign Up",
+                                    style: TextStyle(
+                                      color: Colors.indigo,
+                                      fontSize: 20
+                                    )
+                                  ),
                                 ),
                               ),
                             ],
