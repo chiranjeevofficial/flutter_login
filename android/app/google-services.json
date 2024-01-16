@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "525998131227",
+    "project_id": "cksigndemo",
+    "storage_bucket": "cksigndemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525998131227:android:9b731ab6404769e3c950be",
+        "android_client_info": {
+          "package_name": "com.brahmasmisolutions.ltd.signup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDd1LBIq7_iJkeeuaHuf8aDnFwiQpYPww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525998131227:android:2cd79e871c1b2a6ec950be",
+        "android_client_info": {
+          "package_name": "com.example.login_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDd1LBIq7_iJkeeuaHuf8aDnFwiQpYPww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

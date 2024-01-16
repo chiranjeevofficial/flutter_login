@@ -29,16 +29,11 @@ class _SignupPageState extends State<SignupPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.teal,
+        iconTheme: const IconThemeData(color: Colors.white),
         title: const Center(
-          child: Text(
-            "Sign Up",
-            style: TextStyle(color: Colors.white)
-          )
-        ),
+            child: Text("Sign Up", style: TextStyle(color: Colors.white))),
         leadingWidth: 60,
-        actions: [
-          Container(width: 60)
-        ],
+        actions: [Container(width: 60)],
       ),
       body: SingleChildScrollView(
         child: Center(
